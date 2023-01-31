@@ -14,6 +14,7 @@ public class Person {
         setRole(role);
         setSwedishPersonalNumber(swedishPersonalNumber);
         this.phoneNumber = phoneNumber;
+
     }
 
     public int getRole() {
@@ -24,6 +25,7 @@ public class Person {
         if (role < 0 || role > 4)
             throw new IllegalArgumentException("illegal role" + role);
         this.role = role;
+
     }
 
     public String getSwedishPersonalNumber() {
