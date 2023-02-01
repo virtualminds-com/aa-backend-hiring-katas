@@ -16,18 +16,10 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getRole() {
-        return role;
-    }
-
     public void setRole(int role) {
         if (role < 0 || role > 4)
             throw new IllegalArgumentException("illegal role" + role);
         this.role = role;
-    }
-
-    public String getSwedishPersonalNumber() {
-        return swedishPersonalNumber;
     }
 
     public void setSwedishPersonalNumber(String swedishPersonalNumber) {
@@ -35,14 +27,6 @@ public class Person {
         if (swedishPersonalNumber.length() != 12)
             throw new IllegalArgumentException("invalid personal number " + swedishPersonalNumber);
         this.swedishPersonalNumber = swedishPersonalNumber;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public int birthYear() {
