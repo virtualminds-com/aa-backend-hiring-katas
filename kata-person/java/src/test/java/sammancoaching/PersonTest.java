@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PersonTest {
     String swedishPersonalNumber = "19511111-7668";
-    int role = Person.USER_ROLE_MANAGER;
+    PersonalRole role = PersonalRole.USER_ROLE_MANAGER;
     String phoneNumber = "00467123456";
     @Test
     void birthYear() {
@@ -27,17 +27,17 @@ public class PersonTest {
     }
     @Test
     void adminCanDeleteUsers() {
-        Person person = new Person(Person.USER_ROLE_ADMIN, swedishPersonalNumber, phoneNumber);
+        Person person = new Person(PersonalRole.USER_ROLE_ADMIN, swedishPersonalNumber, phoneNumber);
         assertEquals(true, person.canDeleteUsers());
     }
     @Test
     void salesCantDeleteUsers() {
-        Person person = new Person(Person.USER_ROLE_SALES, swedishPersonalNumber, phoneNumber);
+        Person person = new Person(PersonalRole.USER_ROLE_SALES, swedishPersonalNumber, phoneNumber);
         assertEquals(false, person.canDeleteUsers());
     }
     @Test
     void engineersCantDeleteUsers() {
-        Person person = new Person(Person.USER_ROLE_ENGINEER, swedishPersonalNumber, phoneNumber);
+        Person person = new Person(PersonalRole.USER_ROLE_ENGINEER, swedishPersonalNumber, phoneNumber);
         assertEquals(false, person.canDeleteUsers());
     }
 

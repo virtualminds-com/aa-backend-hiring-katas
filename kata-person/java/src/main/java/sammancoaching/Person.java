@@ -1,24 +1,18 @@
 package sammancoaching;
 
 public class Person {
-    public static final int USER_ROLE_ADMIN = 0;
-    public static final int USER_ROLE_ENGINEER = 1;
-    public static final int USER_ROLE_MANAGER = 2;
-    public static final int USER_ROLE_SALES = 3;
 
-    private int role;
+    private PersonalRole role;
 	private String swedishPersonalNumber;
     private String phoneNumber;
 
-    public Person(int role, String swedishPersonalNumber, String phoneNumber) {
+    public Person(PersonalRole role, String swedishPersonalNumber, String phoneNumber) {
         setRole(role);
         setSwedishPersonalNumber(swedishPersonalNumber);
         this.phoneNumber = phoneNumber;
     }
 
-    public void setRole(int role) {
-        if (role < 0 || role > 4)
-            throw new IllegalArgumentException("illegal role" + role);
+    public void setRole(PersonalRole role) {
         this.role = role;
     }
 
@@ -46,6 +40,6 @@ public class Person {
     }
 
     public boolean canDeleteUsers() {
-        return this.role == Person.USER_ROLE_MANAGER || this.role == Person.USER_ROLE_ADMIN;
+        return this.role == PersonalRole.USER_ROLE_MANAGER || this.role == PersonalRole.USER_ROLE_ADMIN;
     }
 }
